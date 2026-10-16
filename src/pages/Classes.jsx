@@ -45,8 +45,6 @@ export default function Classes() {
       const classesSnap = await getDocs(collection(db, 'classes'));
       const classesData = classesSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setClassesList(classesData.length > 0 ? classesData : [
-        { id: '9-A', name: '9-A sinf', teacher: 'Usmonova Kamola', shift: '1-smena' },
-        { id: '11-A', name: '11-A sinf', teacher: 'Tayinlanmagan', shift: '2-smena' },
       ]);
 
       // 2. O'quvchilarni yuklash
