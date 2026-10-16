@@ -57,9 +57,7 @@ export default function Teachers() {
       const teachersSnap = await getDocs(collection(db, 'teachers'));
       const teachersData = teachersSnap.docs.map(docSnap => ({ id: docSnap.id, ...docSnap.data() }));
       setTeachersList(teachersData.length > 0 ? teachersData : [
-        { id: 'TCH-1', fullName: 'Azizov Murod', phone: '+998 90 111 22 33', teacherType: 'both', assignedClass: '9-A', subject: 'Matematika' },
-        { id: 'TCH-2', fullName: 'Karimova Zilola', phone: '+998 91 222 33 44', teacherType: 'class_head', assignedClass: '9-B', subject: '' },
-        { id: 'TCH-3', fullName: 'Tursunov Dilshod', phone: '+998 93 333 44 55', teacherType: 'subject_teacher', assignedClass: '', subject: 'Fizika' }
+        
       ]);
 
       // 2. Sinflarni yuklash
