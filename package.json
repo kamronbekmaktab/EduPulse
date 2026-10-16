@@ -8,9 +8,10 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "start": "npx serve dist -l $PORT"
+    "start": "serve -s dist -l $PORT"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "express": "^5.3.0",
