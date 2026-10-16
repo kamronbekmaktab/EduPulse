@@ -51,17 +51,12 @@ export default function StudentsManagement() {
       const classesSnap = await getDocs(collection(db, 'classes'));
       const classesData = classesSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setClassesList(classesData.length > 0 ? classesData : [
-        { id: '9-A', name: '9-A sinf', teacher: 'Azizov Murod', teacherPhone: '+998 90 111 22 33' },
-        { id: '9-B', name: '9-B sinf', teacher: 'Karimova Zilola', teacherPhone: '+998 91 222 33 44' },
-        { id: '10-A', name: '10-A sinf', teacher: 'Tayinlanmagan', teacherPhone: '+998 93 333 44 55' },
       ]);
 
       // 3. O'quvchilarni yuklash
       const studentsSnap = await getDocs(collection(db, 'students'));
       const studentsData = studentsSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setStudentsList(studentsData.length > 0 ? studentsData : [
-        { id: 'STU-01', fullName: 'Aliyev Samar Botirovich', grade: '9-A', parentName: 'Aliyev Botir' },
-        { id: 'STU-02', fullName: 'Karimova Zilola Rustamovna', grade: '9-A', parentName: 'Karimova Umida' }
       ]);
     } catch (err) {
       console.error("Ma'lumotlarni yuklashda xatolik:", err);
